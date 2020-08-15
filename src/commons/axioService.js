@@ -19,17 +19,17 @@ class AxiosService {
     return this.instance.get(url);
   }
 
-  //   post(url, body) {
-  //     return this.instance.post(url, body);
-  //   }
+  post(url, body) {
+    return this.instance.post(url, body);
+  }
 
-  //   put(url, body) {
-  //     return this.instance.put(url, body);
-  //   }
+    put(url, body) {
+      return this.instance.put(url, body);
+    }
 
-  //   delete(url) {
-  //     return this.instance.delete(url);
-  //   }
+    delete(url) {
+      return this.instance.delete(url);
+    }
 }
 
 export default new AxiosService();

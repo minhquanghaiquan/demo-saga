@@ -14,7 +14,7 @@ import EditIcon from "@material-ui/icons/Edit";
 import styles from "./styles";
 
 const TaskItem = (props) => {
-  const { classes, task, status } = props;
+  const { classes, task, status, onClickEdit, onClickDelete } = props;
   return (
     <Card className={classes.card}>
       <CardContent>
@@ -32,10 +32,10 @@ const TaskItem = (props) => {
       </CardContent>
 
       <CardActions className={classes.CardActions}>
-        <IconButton aria-label="edit">
+        <IconButton aria-label="edit" onClick={onClickEdit}>
           <EditIcon/>
         </IconButton>
-        <IconButton aria-label="delete">
+        <IconButton aria-label="delete" onClick={onClickDelete}>
           <DeleteIcon />
         </IconButton>
       </CardActions>

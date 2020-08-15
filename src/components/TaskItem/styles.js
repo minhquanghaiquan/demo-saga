@@ -4,6 +4,9 @@ const styles = () => ({
           alignItems: 'center',
           justifyContent: 'flex-end',
           fontSize: 12
+     },
+     card: {
+          marginTop: 10,
      }
 })
 

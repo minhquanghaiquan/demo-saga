@@ -1,4 +1,10 @@
-export const API_ENDPOINT = 'https://5f2cf8328085690016922a23.mockapi.io/api';
+import AdminHomePage from '../containers/AdminHomePage/index';
+import Taskboard from '../containers/Taskboard';
+
+
+
+
+export const API_ENDPOINT = 'http://localhost:3000';
 
 
 
@@ -14,7 +20,7 @@ export const STATUSES = [
           label: 'IN PROGRESS'
      },
      {
-          value: 0 ,
+          value: 2 ,
           label: 'COMPLETED'
      },
 ]
@@ -23,4 +29,19 @@ export const STATUS_CODE = {
      SUCCESS: 200,
      CREATED: 201,
      UPDATED: 202,
-}
+};
+
+
+export const ADMIN_ROUTES = [
+     {
+       name: 'Trang quản trị',
+       path: '/',
+       exact: true,
+       component: AdminHomePage,
+     },
+     {
+       name: 'Quản lý công việc',
+       path: '/task-board',
+       component: Taskboard,
+     },
+   ];

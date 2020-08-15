@@ -8,7 +8,7 @@ import styles from './styles'
 import TaskItem from "../TaskItem";
 
 const TaskList = (props) => {
-     const {classes, status , tasks} = props;
+     const {classes, status , tasks, onClickEdit, onClickDelete} = props;
   return (
     <Grid item md={4} xs={12}>
       <Box mt={1} mb={1}>
@@ -18,7 +18,13 @@ const TaskList = (props) => {
       <div className={classes.wrapperListTask}>
         {tasks.map((task, index) => {
           return (
-            <TaskItem task={task} key={index} status={status}/>
+            <TaskItem 
+            task={task} 
+            key={index} 
+            status={status}
+            onClickEdit={()=> onClickEdit(task)}
+            onClickDelete={()=> onClickDelete(task)}
+            />
           );
         })}
       </div>
