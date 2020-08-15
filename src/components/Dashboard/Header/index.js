@@ -9,15 +9,16 @@ import AccountCircle from '@material-ui/icons/AccountCircle';
 import MenuIcon from '@material-ui/icons/Menu';
 import { withStyles } from '@material-ui/styles';
 import styles from './styles';
+import { useHistory } from "react-router-dom";
 
 const menuId = 'primary-search-account-menu';
 
 const Header = (props) => {
   const { classes, name } = props;
-  console.log(name);
   const [anchorEl , setAnchorEl] = useState(null);
-     
+  let history = useHistory();
 
+  console.log(history);
   const handleProfileMenuOpen = e => {
     setAnchorEl(
       e.currentTarget
@@ -28,6 +29,12 @@ const Header = (props) => {
      setAnchorEl(
       null,
     );
+  };
+
+  const handleLogout = () => {
+      if(history) {
+        history.push('/login');
+      }
   };
 
   const renderMenu = () => {
@@ -42,7 +49,7 @@ const Header = (props) => {
         open={isMenuOpen}
         onClose={handleMenuClose}
       >
-        <MenuItem onClick={handleMenuClose}>Logout</MenuItem>
+        <MenuItem onClick={handleLogout}>Logout</MenuItem>
       </Menu>
     );
   };
